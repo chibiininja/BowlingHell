@@ -5,28 +5,30 @@ using UnityEngine;
 public class DebugManager : MonoBehaviour
 {
     public Bowler bowler;
-    private float strength;
+    private float angle;
 
     // Start is called before the first frame update
     void Start()
     {
-        strength = 200.0f;
+        angle = 8.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("down") && strength > 200.0f)
+        if (Input.GetKeyDown("down") && angle > 1.0f)
         {
-            strength -= 20.0f;
-            Debug.Log("Current Strength: " + strength);
+            angle -= 1.0f;
+            Debug.Log("Current Angle: " + angle);
         }
         if (Input.GetKeyDown("up"))
         {
-            strength += 20.0f;
-            Debug.Log("Current Strength: " + strength);
+            angle += 1.0f;
+            Debug.Log("Current Angle: " + angle);
         }
         if (Input.GetKeyDown("q"))
-            bowler.StraightAttack(strength);
+            bowler.StraightAttack(800);
+        if (Input.GetKeyDown("w"))
+            bowler.FlyingAttack(800, 3);
     }
 }
