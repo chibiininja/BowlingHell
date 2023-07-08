@@ -10,7 +10,7 @@ public class AudienceManager : MonoBehaviour
     void Start()
     {
         audience = GameObject.FindGameObjectsWithTag("Player");
-        _ph = FindObjectOfType<PlayerHealth>();
+        _ph = GameObject.FindObjectOfType<PlayerHealth>();
         _ph.SetLives(audience.Length);
     }
 
