@@ -7,19 +7,19 @@ public class Bowler : MonoBehaviour
     public Rigidbody bowlingBall;
     private Rigidbody _currentBall;
 
-    public void StraightAttack(float strength)
+    public void StraightAttack()
     {
         _currentBall = Instantiate(bowlingBall, new Vector3(-6f, 0.7f, 0f), Quaternion.identity);
-        _currentBall.AddForce(Vector3.right * strength);
+        _currentBall.AddForce(Vector3.right * 800f);
         Destroy(_currentBall.gameObject, 5f);
     }
 
-    public void FlyingAttack(float strength, float angle)
+    public void FlyingAttack()
     {
         _currentBall = Instantiate(bowlingBall, new Vector3(-6f, 2f, 0f), Quaternion.identity);
-        _currentBall.AddForce(Vector3.right * strength);
-        _currentBall.AddForce(Vector3.up * strength / angle);
-        _currentBall.AddTorque(new Vector3(.2f, .4f, 1f) * strength / angle);
+        _currentBall.AddForce(Vector3.right * 800f);
+        _currentBall.AddForce(Vector3.up * 800f / 2.75f);
+        _currentBall.AddTorque(new Vector3(.2f, .4f, 1f) * 800f / 2.75f);
         Destroy(_currentBall.gameObject, 5f);
     }
 }

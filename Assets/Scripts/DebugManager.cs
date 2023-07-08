@@ -15,8 +15,8 @@ public class DebugManager : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("q"))
-            bowler.StraightAttack(800f);
+            bowler.StraightAttack();
         if (Input.GetKeyDown("w"))
-            bowler.FlyingAttack(800f, 2.75f);
+            bowler.FlyingAttack();
     }
 }
