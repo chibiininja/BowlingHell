@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 217348359}
   - component: {fileID: 217348360}
+  - component: {fileID: 217348361}
   m_Layer: 0
   m_Name: AudienceManager
   m_TagString: Untagged
@@ -168,6 +169,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audience: []
+--- !u!114 &217348361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 217348358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0d5a85f1901d6140b5673c4f8001edd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &271199697
 GameObject:
   m_ObjectHideFlags: 0
