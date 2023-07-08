@@ -5,10 +5,13 @@ using UnityEngine;
 public class AudienceManager : MonoBehaviour
 {
     public GameObject[] audience;
+    private PlayerHealth _ph;
 
     void Start()
     {
         audience = GameObject.FindGameObjectsWithTag("Player");
+        _ph = FindObjectOfType<PlayerHealth>();
+        _ph.SetLives(audience.Length);
     }
 
     public void TriggerMove()
@@ -20,5 +23,6 @@ public class AudienceManager : MonoBehaviour
             animator.ResetTrigger("Hit");
             animator.SetTrigger("Hit");
         }
+        _ph.DecrementLife();
     }
 }
