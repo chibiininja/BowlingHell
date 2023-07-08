@@ -6,6 +6,12 @@ public class PlayerMovement : MonoBehaviour
 {
     public Animator animator;
     private Rigidbody _rb;
+    private AudienceManager _am;
+
+    void Start()
+    {
+        _am = FindObjectOfType<AudienceManager>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -27,6 +33,8 @@ public class PlayerMovement : MonoBehaviour
         {
             Debug.Log("Audience Member has been hit!");
             _rb = gameObject.AddComponent<Rigidbody>();
+            gameObject.tag = "Untagged";
+            _am.TriggerMove();
             Destroy(animator);
             _rb.AddForce(Vector3.right * 1200f);
             _rb.AddForce(Vector3.up * 500f);
