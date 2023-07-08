@@ -18,5 +18,9 @@ public class DebugManager : MonoBehaviour
             bowler.StraightAttack();
         if (Input.GetKeyDown("w"))
             bowler.FlyingAttack();
+        if (Input.GetKeyDown("e"))
+            bowler.BounceLowerAttack();
+        if (Input.GetKeyDown("r"))
+            bowler.BounceUpperAttack();
     }
 }
