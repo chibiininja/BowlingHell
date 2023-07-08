@@ -31,10 +31,11 @@ public class PauseMenu : MonoBehaviour
         PauseMenuCanvas.SetActive(true);
             Time.timeScale = 0f;
         Paused = true;
+
     }
     public void Play() {
         PauseMenuCanvas.SetActive(false);
-            Time.timeScale = 0f;
+            Time.timeScale = 1f;
         Paused = false;
     }
 
