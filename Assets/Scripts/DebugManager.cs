@@ -10,20 +10,20 @@ public class DebugManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        strength = 1.0f;
+        strength = 200.0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("down") && strength > 1.0f)
+        if (Input.GetKeyDown("down") && strength > 200.0f)
         {
-            strength -= 1.0f;
+            strength -= 20.0f;
             Debug.Log("Current Strength: " + strength);
         }
         if (Input.GetKeyDown("up"))
         {
-            strength += 1.0f;
+            strength += 20.0f;
             Debug.Log("Current Strength: " + strength);
         }
         if (Input.GetKeyDown("q"))
