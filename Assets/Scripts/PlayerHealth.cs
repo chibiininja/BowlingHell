@@ -30,8 +30,10 @@ public class PlayerHealth : MonoBehaviour
     //Die
     void PlayerLoss()
     {
+        Bowler bowler = FindObjectOfType<Bowler>();
+        bowler.DecrementScore();
         Debug.Log("game over");
-        //SceneManager.LoadScene("GameOver");
+        SceneManager.LoadScene("GameOver");
     }
 
 }
