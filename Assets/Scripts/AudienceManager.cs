@@ -5,6 +5,7 @@ using UnityEngine;
 public class AudienceManager : MonoBehaviour
 {
     public GameObject[] audience;
+    public Animator bAnimator;
     private PlayerHealth _ph;
 
     void Start()
@@ -16,6 +17,8 @@ public class AudienceManager : MonoBehaviour
 
     public void TriggerMove()
     {
+        bAnimator.SetBool("Pause", true);
+        StartCoroutine(Unpause());
         audience = GameObject.FindGameObjectsWithTag("Player");
         foreach (GameObject audienceMember in audience)
         {
@@ -24,5 +27,11 @@ public class AudienceManager : MonoBehaviour
             animator.SetTrigger("Hit");
         }
         _ph.DecrementLife();
+    }
+
+    IEnumerator Unpause()
+    {
+        yield return new WaitForSeconds(3);
+        bAnimator.SetBool("Pause", false);
     }
 }
