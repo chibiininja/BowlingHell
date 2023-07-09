@@ -9,10 +9,14 @@ public class Bowler : MonoBehaviour
     public float throwRate = 2.0f;
     private Rigidbody _currentBall;
     private int score;
-    private float nextThrow = 5.0f;
+    private float nextThrow;
     private bool _enraged = false;
     private string[] attacks = { "StraightAttack", "FlyingAttack", "BounceLowerAttack", "BounceUpperAttack" };
 
+    void Start()
+    {
+        nextThrow = Time.time + 5.0f;
+    }
 
     void Update()
     {
