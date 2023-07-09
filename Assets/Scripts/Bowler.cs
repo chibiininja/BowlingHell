@@ -11,11 +11,12 @@ public class Bowler : MonoBehaviour
     private int score;
     private float nextThrow = 0.0f;
     private float timeBuffer;
+    private bool _enraged = false;
     private string[] attacks = { "StraightAttack", "FlyingAttack", "BounceLowerAttack", "BounceUpperAttack" };
 
     void Start()
     {
-        timeBuffer = Random.value * 2.0f;
+        timeBuffer = Random.value * 0f;
     }
 
     void Update()
@@ -31,10 +32,15 @@ public class Bowler : MonoBehaviour
 
     public void RandomAttack()
     {
-        animator.ResetTrigger("Throw");
-        animator.SetTrigger("Throw");
+        if (score == 30 && !_enraged)
+        {
+            _enraged = true;
+            return;
+        }
         if (!animator.GetBool("Pause"))
         {
+            animator.ResetTrigger("Throw");
+            animator.SetTrigger("Throw");
             if (score < 15)
                 Invoke(attacks[0], 1f);
             else if (score < 30)
