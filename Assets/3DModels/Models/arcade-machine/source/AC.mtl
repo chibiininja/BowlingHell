@@ -1,0 +1,44 @@
+newmtl Arcade_machine_highpoly_MESH:lambert2SG
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd AC_Arcade_machine_highpoly_MESH_lambert2SG_color.tga
+map_Ks AC_Arcade_machine_highpoly_MESH_lambert2SG_rough.tga
+map_bump AC_Arcade_machine_highpoly_MESH_lambert2SG_nmap.tga
+newmtl Arcade_machine_highpoly_MESH:lambert4SG
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd AC_Arcade_machine_highpoly_MESH_lambert4SG_color.tga
+map_Ks AC_Arcade_machine_highpoly_MESH_lambert4SG_rough.tga
+map_bump AC_Arcade_machine_highpoly_MESH_lambert4SG_nmap.tga
+newmtl Arcade_machine_highpoly_MESH:initialShadingGroup
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd AC_Arcade_machine_highpoly_MESH_initialShadingGroup_color.tga
+map_Ks AC_Arcade_machine_highpoly_MESH_initialShadingGroup_rough.tga
+map_bump AC_Arcade_machine_highpoly_MESH_initialShadingGroup_nmap.tga
+newmtl Arcade_machine_highpoly_MESH:lambert3SG
+Ns 100.000
+d 1.00000
+illum 2
+Kd 1.00000 1.00000 1.00000
+Ka 0.00000 0.00000 0.00000
+Ks 1.00000 1.00000 1.00000
+Ke 0.00000e+0 0.00000e+0 0.00000e+0
+map_Kd AC_Arcade_machine_highpoly_MESH_lambert3SG_color.tga
+map_Ks AC_Arcade_machine_highpoly_MESH_lambert3SG_rough.tga
+map_bump AC_Arcade_machine_highpoly_MESH_lambert3SG_nmap.tga
