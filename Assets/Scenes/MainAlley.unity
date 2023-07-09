@@ -2387,6 +2387,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bowlingBall: {fileID: 959107738444248965, guid: 9e57c67d9dfc8f446a8a3f2451e1fc7c, type: 3}
   animator: {fileID: 919132149286897636}
+  throwRate: 1.25
 --- !u!95 &919132149286897636
 Animator:
   serializedVersion: 5

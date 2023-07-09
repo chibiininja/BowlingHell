@@ -25,7 +25,7 @@ public class Bowler : MonoBehaviour
         if (Time.time > nextThrow + timeBuffer)
         {
             nextThrow = Time.time + throwRate;
-            timeBuffer = Random.value * 2.0f;
+            timeBuffer = Random.value * 0.0f;
             RandomAttack();
         }
     }
@@ -35,6 +35,7 @@ public class Bowler : MonoBehaviour
         if (score == 30 && !_enraged)
         {
             _enraged = true;
+            nextThrow += 1.0f;
             return;
         }
         if (!animator.GetBool("Pause"))
