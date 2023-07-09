@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
     private IEnumerator play()
     {
         yield return new WaitForSeconds(1.5f);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("MainAlley");
     }
 
     public void Quit()
