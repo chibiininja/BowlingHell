@@ -15,7 +15,7 @@ public class Score : MonoBehaviour
         bowler = FindObjectOfType<Bowler>();
     }
 
-    // Update is called once per frame
+    // Update is called once per ball thrown
     public void UpdateScoreText(int x)
     {
         ScoreText.text = "Score: " + x;

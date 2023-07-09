@@ -8,10 +8,11 @@ public class Bowler : MonoBehaviour
     public Animator animator;
     public float throwRate = 2.0f;
     private Rigidbody _currentBall;
-    private int score;
     private float nextThrow;
     private bool _enraged = false;
     private string[] attacks = { "StraightAttack", "FlyingAttack", "BounceLowerAttack", "BounceUpperAttack" };
+    [SerializeField]
+    private IntSO scoreSO;
 
     void Start()
     {
@@ -20,7 +21,7 @@ public class Bowler : MonoBehaviour
 
     void Update()
     {
-        animator.SetInteger("Score", score);
+        animator.SetInteger("Score", scoreSO.Value);
         if (Time.time > nextThrow)
         {
             nextThrow = Time.time + throwRate;
@@ -30,7 +31,7 @@ public class Bowler : MonoBehaviour
 
     public void RandomAttack()
     {
-        if (score == 30 && !_enraged)
+        if (scoreSO.Value == 30 && !_enraged)
         {
             _enraged = true;
             nextThrow += 1.0f;
@@ -40,14 +41,14 @@ public class Bowler : MonoBehaviour
         {
             animator.ResetTrigger("Throw");
             animator.SetTrigger("Throw");
-            if (score < 15)
+            if (scoreSO.Value < 15)
                 Invoke(attacks[0], 1f);
-            else if (score < 30)
+            else if (scoreSO.Value < 30)
             {
                 throwRate = 1.25f;
                 Invoke(attacks[(int)Mathf.Round(Random.value)], 1f);
             }
-            else if (score < 50)
+            else if (scoreSO.Value < 50)
             {
                 throwRate = 0.6f;
                 Invoke(attacks[(int)Mathf.Round(Random.value * 3f)], 0.5f);
@@ -95,8 +96,8 @@ public class Bowler : MonoBehaviour
 
     public void UpdateScore()
     {
-        score++;
+        scoreSO.Value++;
         Score sc = FindObjectOfType<Score>();
-        sc.UpdateScoreText(score);
+        sc.UpdateScoreText(scoreSO.Value);
     }
 }
