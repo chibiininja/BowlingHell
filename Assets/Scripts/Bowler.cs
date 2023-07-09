@@ -45,6 +45,7 @@ public class Bowler : MonoBehaviour
             animator.ResetTrigger("Throw");
             animator.SetTrigger("Throw");
             if (scoreSO.Value < 15)
+                
                 Invoke(attacks[0], 1f);
             else if (scoreSO.Value < 30)
             {
