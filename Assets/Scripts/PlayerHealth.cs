@@ -7,6 +7,12 @@ public class PlayerHealth : MonoBehaviour
 {
     public GameObject[] lifeBar;
     private int _lives;
+    private AudioManager _audioManager;
+
+    void Start()
+    {
+        _audioManager = FindObjectOfType<AudioManager>();
+    }
 
     public void SetLives(int lives)
     {
@@ -21,6 +27,7 @@ public class PlayerHealth : MonoBehaviour
     {
         _lives--;
         lifeBar[_lives].SetActive(false);
+        _audioManager.Play("loselife");
         if (_lives == 0)
         {
             PlayerLoss();

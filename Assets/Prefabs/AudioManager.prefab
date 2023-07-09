@@ -1,0 +1,121 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3884037937665519665
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3884037937665519666}
+  - component: {fileID: 3884037937665519667}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3884037937665519666
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3884037937665519665}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3884037937665519667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3884037937665519665}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fbae2361ccc0a54bbb8ad282c292e7c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 0
+  sounds:
+  - name: Theme
+    clip: {fileID: 8300000, guid: c0a14cb2ef68406478eeb119a98ce5e1, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    low_pass_cutoff: 0
+    high_pass_cutoff: 0
+  - name: playerhit
+    clip: {fileID: 8300000, guid: f4e53239b2db7a24dadda65a60d04490, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    low_pass_cutoff: 0
+    high_pass_cutoff: 0
+  - name: ballthrow
+    clip: {fileID: 8300000, guid: dd0e2149b00b3b84182bc95d62a46226, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    low_pass_cutoff: 0
+    high_pass_cutoff: 0
+  - name: ballroll1
+    clip: {fileID: 8300000, guid: 59103584734fcef46ae577aec9fd32c8, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    low_pass_cutoff: 0
+    high_pass_cutoff: 0
+  - name: ballroll2
+    clip: {fileID: 8300000, guid: acc6b658475010247b4d2df7f2680a5b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    low_pass_cutoff: 0
+    high_pass_cutoff: 0
+  - name: ambience
+    clip: {fileID: 8300000, guid: b01629aee16d3df498c6f244fa844cdf, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    low_pass_cutoff: 0
+    high_pass_cutoff: 0
+  - name: GameOverbackground
+    clip: {fileID: 8300000, guid: dd304044aa7803247950f2d593d5cee3, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+    low_pass_cutoff: 0
+    high_pass_cutoff: 0
+  - name: GameOver
+    clip: {fileID: 8300000, guid: a870bc54ce49c584192ccb11dd9a71d7, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    low_pass_cutoff: 0
+    high_pass_cutoff: 0
+  - name: loselife
+    clip: {fileID: 8300000, guid: 44469e8e900e6d245b9b070600462a11, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+    low_pass_cutoff: 0
+    high_pass_cutoff: 0
+  musics: []

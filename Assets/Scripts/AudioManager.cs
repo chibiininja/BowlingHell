@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -36,6 +37,16 @@ public class AudioManager : MonoBehaviour
     private void Start()
     {
         _selected = 0;
+        int currentScene = SceneManager.GetActiveScene().buildIndex;
+        if (currentScene == 1)
+            Play("ambience");
+        if (currentScene != 2)
+            Play("Theme");
+        else
+        {
+            Play("GameOver");
+            Play("GameOverbackground");
+        }
     }
 
     private void Update()

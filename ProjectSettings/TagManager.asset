@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - BowlingBall
+  - Ground
   layers:
   - Default
   - TransparentFX

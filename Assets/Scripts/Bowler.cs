@@ -13,10 +13,12 @@ public class Bowler : MonoBehaviour
     private string[] attacks = { "StraightAttack", "FlyingAttack", "BounceLowerAttack", "BounceUpperAttack" };
     [SerializeField]
     private IntSO scoreSO;
+    private AudioManager _audioManager;
 
     void Start()
     {
         nextThrow = Time.time + 5.0f;
+        _audioManager = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -56,8 +58,18 @@ public class Bowler : MonoBehaviour
         }
     }
 
+    private void ThrowingNoise()
+    {
+        _audioManager.Play("ballthrow");
+        if ((int)Mathf.Round(Random.value) == 1)
+            _audioManager.Play("ballroll1");
+        else
+            _audioManager.Play("ballroll2");
+    }
+
     public void StraightAttack()
     {
+        ThrowingNoise();
         _currentBall = Instantiate(bowlingBall, new Vector3(-6f, 0.7f, 0f), Quaternion.identity);
         _currentBall.AddForce(Vector3.right * 800f);
         Destroy(_currentBall.gameObject, 5f);
@@ -66,6 +78,7 @@ public class Bowler : MonoBehaviour
 
     public void FlyingAttack()
     {
+        ThrowingNoise();
         _currentBall = Instantiate(bowlingBall, new Vector3(-6f, 2f, 0f), Quaternion.identity);
         _currentBall.AddForce(Vector3.right * 800f);
         _currentBall.AddForce(Vector3.up * 800f / 2.75f);
@@ -76,6 +89,7 @@ public class Bowler : MonoBehaviour
 
     public void BounceLowerAttack()
     {
+        ThrowingNoise();
         _currentBall = Instantiate(bowlingBall, new Vector3(-6f, 2f, 0f), Quaternion.identity);
         _currentBall.AddForce(Vector3.right * 800f);
         _currentBall.AddForce(Vector3.down * 600f);
@@ -86,6 +100,7 @@ public class Bowler : MonoBehaviour
 
     public void BounceUpperAttack()
     {
+        ThrowingNoise();
         _currentBall = Instantiate(bowlingBall, new Vector3(-6f, 2f, 0f), Quaternion.identity);
         _currentBall.AddForce(Vector3.right * 600f);
         _currentBall.AddForce(Vector3.down * 1000f);

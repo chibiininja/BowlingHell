@@ -7,10 +7,23 @@ public class MainMenu : MonoBehaviour
 {
     public void Play()
     {
-        SceneManager.LoadScene(1); 
+        StartCoroutine(play()); 
     }
+
+    private IEnumerator play()
+    {
+        yield return new WaitForSeconds(1.5f);
+        SceneManager.LoadScene(1);
+    }
+
     public void Quit()
     {
+        StartCoroutine(quit());
+    }
+
+    private IEnumerator quit()
+    {
+        yield return new WaitForSeconds(1f);
         Application.Quit();
         Debug.Log("Player Has Quit the Game");
     }
