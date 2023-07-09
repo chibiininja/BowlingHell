@@ -48,7 +48,7 @@ MonoBehaviour:
   sounds:
   - name: Theme
     clip: {fileID: 8300000, guid: c0a14cb2ef68406478eeb119a98ce5e1, type: 3}
-    volume: 1
+    volume: 0.7
     pitch: 1
     loop: 1
     source: {fileID: 0}
@@ -96,7 +96,7 @@ MonoBehaviour:
     high_pass_cutoff: 0
   - name: GameOverbackground
     clip: {fileID: 8300000, guid: dd304044aa7803247950f2d593d5cee3, type: 3}
-    volume: 1
+    volume: 0.8
     pitch: 1
     loop: 1
     source: {fileID: 0}
