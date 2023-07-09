@@ -48,7 +48,7 @@ public class Bowler : MonoBehaviour
                 throwRate = 1.25f;
                 Invoke(attacks[(int)Mathf.Round(Random.value)], 1f);
             }
-            else if (scoreSO.Value < 50)
+            else
             {
                 throwRate = 0.6f;
                 Invoke(attacks[(int)Mathf.Round(Random.value * 3f)], 0.5f);
