@@ -7,10 +7,12 @@ public class PlayerMovement : MonoBehaviour
     public Animator animator;
     private Rigidbody _rb;
     private AudienceManager _am;
+    private AudioManager audio;
 
     void Start()
     {
         _am = FindObjectOfType<AudienceManager>();
+        audio = FindObjectOfType<AudioManager>();
     }
 
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         if (other.tag == "BowlingBall" && !_rb)
         {
             Debug.Log("Audience Member has been hit!");
+            audio.Play("playerhit");
             _rb = gameObject.AddComponent<Rigidbody>();
             gameObject.tag = "Untagged";
             _am.TriggerMove();

@@ -13,10 +13,13 @@ public class Bowler : MonoBehaviour
     private string[] attacks = { "StraightAttack", "FlyingAttack", "BounceLowerAttack", "BounceUpperAttack" };
     [SerializeField]
     private IntSO scoreSO;
+    private AudioManager audio;
+
 
     void Start()
     {
         nextThrow = Time.time + 5.0f;
+        audio = FindObjectOfType<AudioManager>();
     }
 
     void Update()
@@ -25,7 +28,7 @@ public class Bowler : MonoBehaviour
         if (Time.time > nextThrow)
         {
             nextThrow = Time.time + throwRate;
-            RandomAttack();
+            RandomAttack(); 
         }
     }
 
@@ -43,6 +46,7 @@ public class Bowler : MonoBehaviour
             animator.SetTrigger("Throw");
             if (scoreSO.Value < 15)
                 Invoke(attacks[0], 1f);
+
             else if (scoreSO.Value < 30)
             {
                 throwRate = 1.25f;
@@ -56,16 +60,26 @@ public class Bowler : MonoBehaviour
         }
     }
 
-    public void StraightAttack()
+    //this suonds let you choose between two different sounds 
+    
+
+public void StraightAttack()
     {
+        audio.Play("ballthrow");
         _currentBall = Instantiate(bowlingBall, new Vector3(-6f, 0.7f, 0f), Quaternion.identity);
         _currentBall.AddForce(Vector3.right * 800f);
         Destroy(_currentBall.gameObject, 5f);
         UpdateScore();
+
+        if ((int)Mathf.Round(Random.value) == 1)
+        audio.Play("ballroll");
+
     }
 
     public void FlyingAttack()
     {
+        audio.Play("ballthrow");
+
         _currentBall = Instantiate(bowlingBall, new Vector3(-6f, 2f, 0f), Quaternion.identity);
         _currentBall.AddForce(Vector3.right * 800f);
         _currentBall.AddForce(Vector3.up * 800f / 2.75f);
