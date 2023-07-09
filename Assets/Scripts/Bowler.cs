@@ -19,6 +19,7 @@ public class Bowler : MonoBehaviour
     {
         nextThrow = Time.time + 5.0f;
         _audioManager = FindObjectOfType<AudioManager>();
+        scoreSO.Value = 0;
     }
 
     void Update()
