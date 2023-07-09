@@ -9,23 +9,17 @@ public class Bowler : MonoBehaviour
     public float throwRate = 2.0f;
     private Rigidbody _currentBall;
     private int score;
-    private float nextThrow = 0.0f;
-    private float timeBuffer;
+    private float nextThrow = 5.0f;
     private bool _enraged = false;
     private string[] attacks = { "StraightAttack", "FlyingAttack", "BounceLowerAttack", "BounceUpperAttack" };
 
-    void Start()
-    {
-        timeBuffer = Random.value * 0f;
-    }
 
     void Update()
     {
         animator.SetInteger("Score", score);
-        if (Time.time > nextThrow + timeBuffer)
+        if (Time.time > nextThrow)
         {
             nextThrow = Time.time + throwRate;
-            timeBuffer = Random.value * 0.0f;
             RandomAttack();
         }
     }
@@ -45,9 +39,15 @@ public class Bowler : MonoBehaviour
             if (score < 15)
                 Invoke(attacks[0], 1f);
             else if (score < 30)
+            {
+                throwRate = 1.25f;
                 Invoke(attacks[(int)Mathf.Round(Random.value)], 1f);
+            }
             else if (score < 50)
-                Invoke(attacks[(int)Mathf.Round(Random.value * 3f)], 1f);
+            {
+                throwRate = 0.6f;
+                Invoke(attacks[(int)Mathf.Round(Random.value * 3f)], 0.5f);
+            }
         }
     }
 
