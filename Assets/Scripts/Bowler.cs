@@ -13,7 +13,7 @@ public class Bowler : MonoBehaviour
         _currentBall = Instantiate(bowlingBall, new Vector3(-6f, 0.7f, 0f), Quaternion.identity);
         _currentBall.AddForce(Vector3.right * 800f);
         Destroy(_currentBall.gameObject, 5f);
-        score++;
+        UpdateScore();
     }
 
     public void FlyingAttack()
@@ -23,7 +23,7 @@ public class Bowler : MonoBehaviour
         _currentBall.AddForce(Vector3.up * 800f / 2.75f);
         _currentBall.AddTorque(new Vector3(.2f, .4f, 1f) * 800f / 2.75f);
         Destroy(_currentBall.gameObject, 5f);
-        score++;
+        UpdateScore();
     }
 
     public void BounceLowerAttack()
@@ -33,7 +33,7 @@ public class Bowler : MonoBehaviour
         _currentBall.AddForce(Vector3.down * 600f);
         _currentBall.AddTorque(new Vector3(.2f, .4f, 1f) * 800f / 2.75f);
         Destroy(_currentBall.gameObject, 5f);
-        score++;
+        UpdateScore();
     }
 
     public void BounceUpperAttack()
@@ -43,16 +43,13 @@ public class Bowler : MonoBehaviour
         _currentBall.AddForce(Vector3.down * 1000f);
         _currentBall.AddTorque(new Vector3(.2f, .4f, 1f) * 800f / 2.75f);
         Destroy(_currentBall.gameObject, 5f);
+        UpdateScore();
+    }
+
+    public void UpdateScore()
+    {
         score++;
-    }
-
-    public int GetScore()
-    {
-        return score;
-    }
-
-    public void DecrementScore()
-    {
-        score--;
+        Score sc = FindObjectOfType<Score>();
+        sc.UpdateScoreText(score);
     }
 }
