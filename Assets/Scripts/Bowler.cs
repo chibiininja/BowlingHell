@@ -44,8 +44,7 @@ public class Bowler : MonoBehaviour
         {
             animator.ResetTrigger("Throw");
             animator.SetTrigger("Throw");
-            if (scoreSO.Value < 15)
-                
+            if (scoreSO.Value < 15)         
                 Invoke(attacks[0], 1f);
             else if (scoreSO.Value < 30)
             {
@@ -54,7 +53,7 @@ public class Bowler : MonoBehaviour
             }
             else
             {
-                throwRate = 0.6f;
+                throwRate = 0.9f;
                 Invoke(attacks[(int)Mathf.Round(Random.value * 3f)], 0.5f);
             }
         }

@@ -23,6 +23,7 @@ public class AudienceManager : MonoBehaviour
         foreach (GameObject audienceMember in audience)
         {
             Animator animator = audienceMember.GetComponent<Animator>();
+            animator.SetBool("StopJumping", true);
             animator.ResetTrigger("Hit");
             animator.SetTrigger("Hit");
         }
@@ -33,5 +34,10 @@ public class AudienceManager : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         bAnimator.SetBool("Pause", false);
+        foreach (GameObject audienceMember in audience)
+        {
+            Animator animator = audienceMember.GetComponent<Animator>();
+            animator.SetBool("StopJumping", false);
+        }
     }
 }
